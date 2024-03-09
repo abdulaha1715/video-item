@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+
+<style>
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.ab-video-item {
+    width: 318px;
+    position: relative;
+}
+
+video#myVideo {}
+
+.ab-text-btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: calc(100% - 40px);
+    bottom: 0;
+    padding: 0 20px 20px;
+}
+
+.ab-video-text {
+    width: 80%;
+}
+
+.ab-video-text h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.ab-video-text span {
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #d4d4d8;
+}
+
+.ab-video-img {}
+
+.ab-video-img #ab_play_btn {}
+
+.ab-video-img #ab_pause_btn {}
+
+.ab-video-img img {
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+}
+
+.ab-vd-none {
+    display: none;
+}
+
+.ab-vd-block {
+    display: block;
+}
+</style>
+
+
+
+<!-- 
+<img src="https://hasiburrahman.me/wp-content/uploads/2024/03/Play.png" alt="" id="ab_play_btn">
+<img src="https://hasiburrahman.me/wp-content/uploads/2024/03/pause.png" alt="" id="ab_pause_btn"> 
+-->
+
+
+
+	<div class="ab-video-item">
+		<video id="myVideo" width="320" height="176">
+			<source src="placeholder-video.mp4" type="video/mp4">
+			<source src="placeholder-video.mp4" type="video/ogg">
+			Your browser does not support HTML5 video.
+		</video>
+
+		<div class="ab-text-btn">
+			<div class="ab-video-text">
+				<h3>John doe</h3>
+				<span>Founder of Greepup</span>
+			</div>
+			<div class="ab-video-img">
+				<img onclick="playVid()" src="play.png" alt="" id="ab_play_btn">
+				<img onclick="pauseVid()" src="pause.png" alt="" class="ab-vd-none" id="ab_pause_btn">
+			</div>
+		</div>
+
+	</div>
+	
+
+<script
+  src="https://code.jquery.com/jquery-1.12.3.js"
+  integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="
+  crossorigin="anonymous"></script>
+
+<script> 
+
+	$("#ab_play_btn").click(function(){
+		$("#ab_play_btn").addClass("ab-vd-none");
+		$("#ab_pause_btn").removeClass("ab-vd-none");
+	});
+
+	$("#ab_pause_btn").click(function(){
+		$("#ab_play_btn").removeClass("ab-vd-none");
+		$("#ab_pause_btn").addClass("ab-vd-none");
+	});
+
+	let vid = document.getElementById("myVideo"); 
+
+	function playVid() { 
+	  vid.play(); 
+	} 
+
+	function pauseVid() { 
+	  vid.pause(); 
+	} 
+</script> 
+
+</body>
+</html>
