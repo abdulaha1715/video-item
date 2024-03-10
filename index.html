@@ -26,12 +26,12 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    gap: 20px;
 }
 
 .ab-video-item video {
     width: 100%;
-/*    min-height: 380px;*/
+    border-radius: 20px
 }
 
 .ab-video-item {
@@ -45,20 +45,20 @@ video#myVideo {}
     display: flex;
     align-items: center;
     position: absolute;
-    width: calc(100% - 40px);
-    bottom: 0;
-    padding: 0 20px 20px;
+    width: calc(100% - 60px);
+    bottom: 20px;
+    padding: 0 30px 20px 30px;
 }
 
 .ab-video-text {
-    width: calc(100% - 45px);
+    width: 70%;
 }
 
 .ab-video-text h3 {
     margin: 0;
     padding: 0;
     font-size: 18px;
-    font-family: sans-serif;
+    font-family: "SF Pro Display", sans-serif;
     color: #FFFFFF;
     margin-bottom: 5px;
 }
@@ -70,7 +70,7 @@ video#myVideo {}
 }
 
 .ab-video-img {
-    width: 45px;
+    width: 30%;
     text-align: right;
 }
 
@@ -80,8 +80,8 @@ video#myVideo {}
 
 .ab-video-img img {
     cursor: pointer;
-    width: 45px;
-    height: 45px;
+    width: auto;
+    height: aauto;
     object-fit: cover;
 }
 
@@ -92,6 +92,27 @@ video#myVideo {}
 .ab-vd-block {
     display: block;
 }
+
+@media screen and (max-width: 1024px) {
+	.container-wrap {
+	    width: calc(100% - 80px);
+	    gap: 40px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.container-wrap {
+	    width: calc(100% - 40px);
+	    display: block;
+	}
+
+	.ab-video-item {
+	    width: 320px;
+	    margin: 0 auto 25px;
+	}
+}
+
+
 </style>
 
 
@@ -106,8 +127,8 @@ video#myVideo {}
 	<div class="container-wrap">
 		<div class="ab-video-item">
 			<video id="video_one">
-				<source src="placeholder-video.mp4" type="video/mp4">
-				<source src="placeholder-video.mp4" type="video/ogg">
+				<source src="https://hasiburrahman.me/wp-content/uploads/2024/03/Future-Of-Web-Designer😈🔥-_-Html_Css-shorts-web-design.mp4">
+				<source src="https://hasiburrahman.me/wp-content/uploads/2024/03/Future-Of-Web-Designer😈🔥-_-Html_Css-shorts-web-design.mp4" type="video/ogg">
 				Your browser does not support HTML5 video.
 			</video>
 
@@ -117,21 +138,21 @@ video#myVideo {}
 					<span>Founder of Greepup</span>
 				</div>
 				<div class="ab-video-img">
-					<img onclick="playVid()" src="play.png" alt="" id="ab_play_btn">
-					<img onclick="pauseVid()" src="pause.png" alt="" class="ab-vd-none" id="ab_pause_btn">
+					<img decoding="async" onclick="playVid()" src="https://hasiburrahman.me/wp-content/uploads/2024/03/Play-1.png" alt="" id="ab_play_btn">
+					<img decoding="async" onclick="pauseVid()" src="https://hasiburrahman.me/wp-content/uploads/2024/03/pause-1.png" alt=""  class="ab-vd-none" id="ab_pause_btn">
 				</div>
 			</div>
 
 			<script> 
 
-				$("#ab_play_btn").click(function(){
-					$("#ab_play_btn").addClass("ab-vd-none");
-					$("#ab_pause_btn").removeClass("ab-vd-none");
+				jQuery("#ab_play_btn").click(function(){
+					jQuery("#ab_play_btn").addClass("ab-vd-none");
+					jQuery("#ab_pause_btn").removeClass("ab-vd-none");
 				});
 
-				$("#ab_pause_btn").click(function(){
-					$("#ab_play_btn").removeClass("ab-vd-none");
-					$("#ab_pause_btn").addClass("ab-vd-none");
+				jQuery("#ab_pause_btn").click(function(){
+					jQuery("#ab_play_btn").removeClass("ab-vd-none");
+					jQuery("#ab_pause_btn").addClass("ab-vd-none");
 				});
 
 				let vid = document.getElementById("video_one"); 
@@ -148,8 +169,8 @@ video#myVideo {}
 
 		<div class="ab-video-item">
 			<video id="video_two">
-				<source src="placeholder-video.mp4" type="video/mp4">
-				<source src="placeholder-video.mp4" type="video/ogg">
+				<source src="https://hasiburrahman.me/wp-content/uploads/2024/03/Future-Of-Web-Designer😈🔥-_-Html_Css-shorts-web-design.mp4">
+				<source src="https://hasiburrahman.me/wp-content/uploads/2024/03/Future-Of-Web-Designer😈🔥-_-Html_Css-shorts-web-design.mp4" type="video/ogg">
 				Your browser does not support HTML5 video.
 			</video>
 
@@ -159,21 +180,21 @@ video#myVideo {}
 					<span>Founder of Greepup</span>
 				</div>
 				<div class="ab-video-img">
-					<img onclick="playVidTwo()" src="play.png" alt="" id="ab_play_btn_two">
-					<img onclick="pauseVidTwo()" src="pause.png" alt="" class="ab-vd-none" id="ab_pause_btn_two">
+					<img decoding="async" onclick="playVidTwo()" src="https://hasiburrahman.me/wp-content/uploads/2024/03/Play-1.png" alt="" id="ab_play_btn_two">
+					<img decoding="async" onclick="pauseVidTwo()" src="https://hasiburrahman.me/wp-content/uploads/2024/03/pause-1.png" alt="" class="ab-vd-none" id="ab_pause_btn_two">
 				</div>
 			</div>
 
 			<script> 
 
-				$("#ab_play_btn_two").click(function(){
-					$("#ab_play_btn_two").addClass("ab-vd-none");
-					$("#ab_pause_btn_two").removeClass("ab-vd-none");
+				jQuery("#ab_play_btn_two").click(function(){
+					jQuery("#ab_play_btn_two").addClass("ab-vd-none");
+					jQuery("#ab_pause_btn_two").removeClass("ab-vd-none");
 				});
 
-				$("#ab_pause_btn_two").click(function(){
-					$("#ab_play_btn_two").removeClass("ab-vd-none");
-					$("#ab_pause_btn_two").addClass("ab-vd-none");
+				jQuery("#ab_pause_btn_two").click(function(){
+					jQuery("#ab_play_btn_two").removeClass("ab-vd-none");
+					jQuery("#ab_pause_btn_two").addClass("ab-vd-none");
 				});
 
 				let vidTwo = document.getElementById("video_two"); 
@@ -190,8 +211,8 @@ video#myVideo {}
 
 		<div class="ab-video-item">
 			<video id="video_three">
-				<source src="placeholder-video.mp4" type="video/mp4">
-				<source src="placeholder-video.mp4" type="video/ogg">
+				<source src="https://hasiburrahman.me/wp-content/uploads/2024/03/Future-Of-Web-Designer😈🔥-_-Html_Css-shorts-web-design.mp4" type="video/mp4">
+				<source src="https://hasiburrahman.me/wp-content/uploads/2024/03/Future-Of-Web-Designer😈🔥-_-Html_Css-shorts-web-design.mp4" type="video/ogg">
 				Your browser does not support HTML5 video.
 			</video>
 
@@ -201,21 +222,21 @@ video#myVideo {}
 					<span>Founder of Greepup</span>
 				</div>
 				<div class="ab-video-img">
-					<img onclick="playVidThree()" src="play.png" alt="" id="ab_play_btn_three">
-					<img onclick="pauseVidThree()" src="pause.png" alt="" class="ab-vd-none" id="ab_pause_btn_three">
+					<img decoding="async" onclick="playVidThree()" src="https://hasiburrahman.me/wp-content/uploads/2024/03/Play-1.png" alt="" id="ab_play_btn_three" class="">
+					<img decoding="async" onclick="pauseVidThree()" src="https://hasiburrahman.me/wp-content/uploads/2024/03/pause-1.png" alt="" class="ab-vd-none" id="ab_pause_btn_three">
 				</div>
 			</div>
 
 			<script> 
-
-				$("#ab_play_btn_three").click(function(){
-					$("#ab_play_btn_three").addClass("ab-vd-none");
-					$("#ab_pause_btn_three").removeClass("ab-vd-none");
+			    var jQuery = jQuery;
+				jQuery("#ab_play_btn_three").click(function(){
+					jQuery("#ab_play_btn_three").addClass("ab-vd-none");
+					jQuery("#ab_pause_btn_three").removeClass("ab-vd-none");
 				});
 
-				$("#ab_pause_btn_three").click(function(){
-					$("#ab_play_btn_three").removeClass("ab-vd-none");
-					$("#ab_pause_btn_three").addClass("ab-vd-none");
+				jQuery("#ab_pause_btn_three").click(function(){
+					jQuery("#ab_play_btn_three").removeClass("ab-vd-none");
+					jQuery("#ab_pause_btn_three").addClass("ab-vd-none");
 				});
 
 				let vidThree = document.getElementById("video_three"); 
