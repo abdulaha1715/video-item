@@ -4,6 +4,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+
+	
+
+<script
+  src="https://code.jquery.com/jquery-1.12.3.js"
+  integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -14,8 +21,21 @@ body {
     margin: 0;
 }
 
+.container-wrap {
+    width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.ab-video-item video {
+    width: 100%;
+/*    min-height: 380px;*/
+}
+
 .ab-video-item {
-    width: 318px;
+    width: 320px;
     position: relative;
 }
 
@@ -31,7 +51,7 @@ video#myVideo {}
 }
 
 .ab-video-text {
-    width: 80%;
+    width: calc(100% - 45px);
 }
 
 .ab-video-text h3 {
@@ -49,7 +69,10 @@ video#myVideo {}
     color: #d4d4d8;
 }
 
-.ab-video-img {}
+.ab-video-img {
+    width: 45px;
+    text-align: right;
+}
 
 .ab-video-img #ab_play_btn {}
 
@@ -80,54 +103,133 @@ video#myVideo {}
 
 
 
-	<div class="ab-video-item">
-		<video id="myVideo" width="320" height="176">
-			<source src="placeholder-video.mp4" type="video/mp4">
-			<source src="placeholder-video.mp4" type="video/ogg">
-			Your browser does not support HTML5 video.
-		</video>
+	<div class="container-wrap">
+		<div class="ab-video-item">
+			<video id="video_one">
+				<source src="placeholder-video.mp4" type="video/mp4">
+				<source src="placeholder-video.mp4" type="video/ogg">
+				Your browser does not support HTML5 video.
+			</video>
 
-		<div class="ab-text-btn">
-			<div class="ab-video-text">
-				<h3>John doe</h3>
-				<span>Founder of Greepup</span>
+			<div class="ab-text-btn">
+				<div class="ab-video-text">
+					<h3>John doe</h3>
+					<span>Founder of Greepup</span>
+				</div>
+				<div class="ab-video-img">
+					<img onclick="playVid()" src="play.png" alt="" id="ab_play_btn">
+					<img onclick="pauseVid()" src="pause.png" alt="" class="ab-vd-none" id="ab_pause_btn">
+				</div>
 			</div>
-			<div class="ab-video-img">
-				<img onclick="playVid()" src="https://hasiburrahman.me/wp-content/uploads/2024/03/Play.png" alt="" id="ab_play_btn">
-				<img onclick="pauseVid()" src="https://hasiburrahman.me/wp-content/uploads/2024/03/pause.png" alt="" class="ab-vd-none" id="ab_pause_btn">
-			</div>
+
+			<script> 
+
+				$("#ab_play_btn").click(function(){
+					$("#ab_play_btn").addClass("ab-vd-none");
+					$("#ab_pause_btn").removeClass("ab-vd-none");
+				});
+
+				$("#ab_pause_btn").click(function(){
+					$("#ab_play_btn").removeClass("ab-vd-none");
+					$("#ab_pause_btn").addClass("ab-vd-none");
+				});
+
+				let vid = document.getElementById("video_one"); 
+
+				function playVid() { 
+				  vid.play(); 
+				} 
+
+				function pauseVid() { 
+				  vid.pause(); 
+				} 
+			</script> 
 		</div>
 
+		<div class="ab-video-item">
+			<video id="video_two">
+				<source src="placeholder-video.mp4" type="video/mp4">
+				<source src="placeholder-video.mp4" type="video/ogg">
+				Your browser does not support HTML5 video.
+			</video>
+
+			<div class="ab-text-btn">
+				<div class="ab-video-text">
+					<h3>John doe</h3>
+					<span>Founder of Greepup</span>
+				</div>
+				<div class="ab-video-img">
+					<img onclick="playVidTwo()" src="play.png" alt="" id="ab_play_btn_two">
+					<img onclick="pauseVidTwo()" src="pause.png" alt="" class="ab-vd-none" id="ab_pause_btn_two">
+				</div>
+			</div>
+
+			<script> 
+
+				$("#ab_play_btn_two").click(function(){
+					$("#ab_play_btn_two").addClass("ab-vd-none");
+					$("#ab_pause_btn_two").removeClass("ab-vd-none");
+				});
+
+				$("#ab_pause_btn_two").click(function(){
+					$("#ab_play_btn_two").removeClass("ab-vd-none");
+					$("#ab_pause_btn_two").addClass("ab-vd-none");
+				});
+
+				let vidTwo = document.getElementById("video_two"); 
+
+				function playVidTwo() { 
+				  vidTwo.play(); 
+				} 
+
+				function pauseVidTwo() { 
+				  vidTwo.pause(); 
+				} 
+			</script> 
+		</div>
+
+		<div class="ab-video-item">
+			<video id="video_three">
+				<source src="placeholder-video.mp4" type="video/mp4">
+				<source src="placeholder-video.mp4" type="video/ogg">
+				Your browser does not support HTML5 video.
+			</video>
+
+			<div class="ab-text-btn">
+				<div class="ab-video-text">
+					<h3>John doe</h3>
+					<span>Founder of Greepup</span>
+				</div>
+				<div class="ab-video-img">
+					<img onclick="playVidThree()" src="play.png" alt="" id="ab_play_btn_three">
+					<img onclick="pauseVidThree()" src="pause.png" alt="" class="ab-vd-none" id="ab_pause_btn_three">
+				</div>
+			</div>
+
+			<script> 
+
+				$("#ab_play_btn_three").click(function(){
+					$("#ab_play_btn_three").addClass("ab-vd-none");
+					$("#ab_pause_btn_three").removeClass("ab-vd-none");
+				});
+
+				$("#ab_pause_btn_three").click(function(){
+					$("#ab_play_btn_three").removeClass("ab-vd-none");
+					$("#ab_pause_btn_three").addClass("ab-vd-none");
+				});
+
+				let vidThree = document.getElementById("video_three"); 
+
+				function playVidThree() { 
+				  vidThree.play(); 
+				} 
+
+				function pauseVidThree() { 
+				  vidThree.pause(); 
+				} 
+			</script> 
+		</div>
 	</div>
-	
-
-<script
-  src="https://code.jquery.com/jquery-1.12.3.js"
-  integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="
-  crossorigin="anonymous"></script>
-
-<script> 
-
-	$("#ab_play_btn").click(function(){
-		$("#ab_play_btn").addClass("ab-vd-none");
-		$("#ab_pause_btn").removeClass("ab-vd-none");
-	});
-
-	$("#ab_pause_btn").click(function(){
-		$("#ab_play_btn").removeClass("ab-vd-none");
-		$("#ab_pause_btn").addClass("ab-vd-none");
-	});
-
-	let vid = document.getElementById("myVideo"); 
-
-	function playVid() { 
-	  vid.play(); 
-	} 
-
-	function pauseVid() { 
-	  vid.pause(); 
-	} 
-</script> 
 
 </body>
 </html>
