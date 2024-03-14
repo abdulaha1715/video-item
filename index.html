@@ -111,17 +111,88 @@ video#myVideo {}
 	    margin: 0 auto 25px;
 	}
 }
+.words {
+  position: relative;
+  animation: move-words 20s linear infinite;
+  margin: 0;
+}
 
+@keyframes move-words {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+    .text {
+      font-weight: 600;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      font-family: 'Kanit';
+      font-size: 17px;
+      fill: #111;
+      text-shadow: 2px 0px #ccc;
+    }
+
+    #rotatingText {
+      animation-name: rotate-circle;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes rotate-circle {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+
+    .main {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .main img {
+      position: absolute;
+    }
+
+    .main img {
+      position: absolute;
+      animation-name: rotate-circle;
+      animation-direction: reverse;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+
+      filter: drop-shadow(0px 0px 5px #333);
+    }
 
 </style>
 
 
 
-<!-- 
-<img src="https://hasiburrahman.me/wp-content/uploads/2024/03/Play.png" alt="" id="ab_play_btn">
-<img src="https://hasiburrahman.me/wp-content/uploads/2024/03/pause.png" alt="" id="ab_pause_btn"> 
--->
 
+	<div class="main">
+		<img src="https://www.kirupa.com/icon/1f354.svg" width="50" height="50">
+		<svg id="rotatingText" viewBox="0 0 200 200" width="200" height="200">
+			<defs>
+				<path id="circle" d="M 100, 100
+				m -75, 0
+				a 75, 75 0 1, 0 150, 0
+				a 75, 75 0 1, 0 -150, 0
+				">
+				</path>
+			</defs>
+			<text width="400">
+				<textPath alignment-baseline="top" xlink:href="#circle" class="text">
+				Part of a heart-healthy breakfast...sorta! -
+				</textPath>
+			</text>
+		</svg>
+	</div>
 
 
 	<div class="container-wrap">
