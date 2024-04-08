@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	
+
+<script
+  src="https://code.jquery.com/jquery-1.12.3.js"
+  integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+
+<!-- 
+
+https://nudoubt.com/wp-content/uploads/2024/04/lets-look.png
+
+
+https://nudoubt.com/wp-content/uploads/2024/04/pause.png
+
+ -->
+
+<style type="text/css">
+	
+
+.abn-h-intro-video {
+	position: relative;
+
+}
+
+.abn-h-intro-video:before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: calc(100% + 208px);
+    background: #D9D9D9;
+    top: -104px;
+    left: 50%;
+    z-index: -2;
+}
+
+.abn-intro-video-item {
+    margin: 160px auto 180px;
+    max-width: 1320px;
+    position: relative;
+}
+
+#abn-home-intro-video {
+    width: 1320px;
+    max-height: 640px;
+	position: relative;
+}
+
+.abn-intro-video-item:before,
+.abn-intro-video-item:after {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: #D9D9D9;
+    border-radius: 50%;
+}
+
+.abn-intro-video-item:before {
+    top: -116px;
+    left: calc(50% - 12px);
+}
+
+.abn-intro-video-item:after {
+    bottom: -116px;
+    left: calc(50% - 12px);
+}
+
+#abn-intro-video-play {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#abn-intro-video-pause {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.abn-i-video-play.abn-vd-block {
+    z-index: 99;
+    cursor: url("https://nudoubt.com/wp-content/uploads/2024/04/lets-look-e1712509401594.png"), auto;
+}
+
+.abn-i-video-pause.abn-vd-block {
+    z-index: 99;
+    cursor: url("https://nudoubt.com/wp-content/uploads/2024/04/pause-e1712509437436.png"), auto;
+}
+
+.ab-vd-none {
+    display: none;
+}
+
+.abn-intro-overlay {
+    position: relative;
+    transition: 0.3s;
+}
+
+.abn-intro-overlay:before {
+    position: absolute;
+    content: "";
+    background: url("https://nudoubt.com/wp-content/uploads/2024/04/220c96159351601.png");
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+</style>
+
+<div class="abn-h-intro-video">
+	<div class="abn-intro-video-item" id="abn-intro-video-wrap">
+		<div id="abn-intro-video-play" class="abn-i-video-play abn-intro-video-trigger abn-intro-overlay abn-vd-block" onclick="playVid()"></div>
+		<div id="abn-intro-video-pause" class="abn-i-video-pause abn-intro-video-trigger abn-vd-none" onclick="pauseVid()"></div>
+		
+		<video id="abn-home-intro-video">
+			<source src="https://nudoubt.com/wp-content/uploads/2024/04/Cruise-Ship-3713.mp4">
+			<source src="https://nudoubt.com/wp-content/uploads/2024/04/Cruise-Ship-3713.mp4" type="video/ogg">
+			Your browser does not support HTML5 video.
+		</video>
+
+		<script> 
+
+			jQuery("#abn-intro-video-play").click(function(){
+				jQuery("#abn-intro-video-play").addClass("abn-vd-none");
+				jQuery("#abn-intro-video-play").removeClass("abn-intro-overlay");
+				jQuery("#abn-intro-video-pause").removeClass("abn-vd-none");
+				jQuery("#abn-intro-video-pause").addClass("abn-vd-block");
+			});
+
+			jQuery("#abn-intro-video-pause").click(function(){
+				jQuery("#abn-intro-video-play").addClass("abn-vd-block");
+				jQuery("#abn-intro-video-play").removeClass("abn-vd-none");
+				jQuery("#abn-intro-video-pause").removeClass("abn-vd-block");
+			});
+
+			let vid = document.getElementById("abn-home-intro-video"); 
+
+			function playVid() { 
+			  vid.play(); 
+			} 
+
+			function pauseVid() { 
+			  vid.pause(); 
+			} 
+		</script> 
+	</div>
+</div>
+
+</body>
+</html>
